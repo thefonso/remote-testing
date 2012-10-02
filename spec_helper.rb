@@ -1,28 +1,13 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'ruby-debug'
+# require 'ruby-debug' # do I need this guy?
+require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
-Dir.glob(File.dirname(__FILE__) + '/factories/*', &method(:require))
+require 'capybara/dsl'
 
 # Capybara configuration
 Capybara.default_driver = :selenium
-Capybara.save_and_open_page_path = File.dirname(__FILE__) + '/../snapshots'
+Capybara.app_host = "http://www.google.com"
 
-# RSpec configuration
-RSpec.configure do |config|
-  config.before(:all) do
-    # Create fixtures
-  end
-  config.after(:all) do
-    # Destroy fixtures
-  end
-  config.around(:each) do |example|
-    begin
-      example.run
-    rescue Exception => ex
-      save_and_open_page
-      raise ex
-    end
-  end
-end
+require "rspec/expectations"
