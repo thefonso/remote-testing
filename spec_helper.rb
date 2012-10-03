@@ -7,7 +7,7 @@ require 'capybara/dsl'
 
 # Capybara configuration
 Capybara.default_driver = :selenium
-Capybara.app_host = "http://www.google.com"
+Capybara.app_host = "http://www.benchprep.com"
 
 require "rspec/expectations"
 
