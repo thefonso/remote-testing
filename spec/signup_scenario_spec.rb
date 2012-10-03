@@ -3,7 +3,7 @@ require_relative '../spec_helper'
 
 describe "Create new user from /purchases/subscription", :type => :request do
   
-	it "should allow user to select login from top nav" do 
+	xit "should allow user to select login from top nav" do 
 		visit "/purchases/subscription" 
     	
     		choose('web-plan') 

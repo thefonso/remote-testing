@@ -20,15 +20,13 @@ describe "Existing User Log in Scenario", :type => :request do
     	within("#login-form")do
       		fill_in 'user-email', :with => 'sample5@benchprep.com'
       		fill_in 'user-password', :with => 'sample5'
-			
-			fill_in 'user-email', :with => 'sample5@benchprep.com'
     	end
 
-    	Capybara.default_wait_time = 5
-      	click_link 'login-link'
-    	#this gives false failing test....why?
-    	# page.evaluate_script("console.log('hi')")
-    	#page.evaluate_script("$('#login-link').click()")
+	#FIXME - the design crew will make this go away    	
+    	within("#login-form") do 
+     	 	click_link '#login-link' #this gives false failing test....why?
+     	end
+
     	page.should have_content('Manage courses')
   	end
 end 
