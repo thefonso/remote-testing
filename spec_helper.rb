@@ -13,3 +13,4 @@ require "rspec/expectations"
 
 include Capybara::DSL
 include RSpec::Matchers
+include 
