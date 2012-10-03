@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'bundler/setup'
-# require 'ruby-debug' # do I need this guy?
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
