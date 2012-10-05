@@ -9,7 +9,7 @@
     end
 
 
-  	xit "should allow user to select login from top nav" do 
+  	it "should allow user to select login from top nav" do 
   		visit "/" 
       	within("#main-header")do
       		click_link 'Log In'	

@@ -4,14 +4,14 @@ require_relative '../spec_helper'
 describe "Create new user from /purchases/subscription", :type => :request do
 
   # before :all do
-  #   @user = FactoryGirl.create(:user)
+  #   @user = FactoryGirl.build(:user)
   # end
 
   # after :all do
   #   user.destroy
   # end
   
-	xit "should allow user to select login from top nav" do 
+	it "should allow user to select login from top nav" do 
 		visit "/purchases/subscription" 
     	
     		choose('web-plan') 
