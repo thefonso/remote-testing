@@ -1,11 +1,11 @@
   require_relative '../spec_helper'
-  require_relative '../lib/login_user'
+  require_relative '../lib/user'
 
 
   describe "Existing User Log in Scenario", :type => :request do
     
     before :all do
-      @user = Factory(:user)
+      @user = FactoryGirl.build(:stuff)
     end
 
 
@@ -25,7 +25,7 @@
         		fill_in 'user-password', :with => @user.password
       	end
 
-  	#FIXME - the design crew will make this go away    	
+  	    #FIXME - the design crew will make this go away    	
       	within("#login-form") do 
        	 	click_link '#login-link' #this gives false failing test...geek query...why?
        	end

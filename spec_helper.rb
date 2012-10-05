@@ -3,7 +3,6 @@ require 'bundler/setup'
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
-# require 'webmock'
 require 'json'
 
 require 'capybara/dsl'
@@ -19,4 +18,3 @@ require "rspec/expectations"
 
 include Capybara::DSL
 include RSpec::Matchers
-# include WebMock::API
