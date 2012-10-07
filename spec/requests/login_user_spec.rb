@@ -1,6 +1,5 @@
-  require_relative '../spec_helper'
-  require_relative '../lib/user'
-
+  require_relative '../../spec_helper'
+  require_relative '../../lib/user'
 
   describe "Existing User Log in Scenario", :type => :request do
     
@@ -8,13 +7,11 @@
       @user = FactoryGirl.build(:stuff)
     end
 
-
   	it "should allow user to select login from top nav" do 
   		visit "/" 
       	within("#main-header")do
       		click_link 'Log In'	
   		end
-  		
   		page.should have_content('Log in to your account')
   	end  
 
@@ -29,7 +26,6 @@
       	within("#login-form") do 
        	 	click_link '#login-link' #this gives false failing test...geek query...why?
        	end
-
       	page.should have_content('Manage courses')
     	end
   end 

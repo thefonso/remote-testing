@@ -1,0 +1,83 @@
+
+Registration Scenarios
+
+NEW = new 3.0 user
+
+	1.  Create new account from https://benchprep.com/purchases/subscription
+
+	2.  Create new account from https://benchprep.com/purchases/solo 
+		(does she mean...https://benchprep.com/courses/plan/solo)
+	
+LTA = new user with lifetime access course
+
+	1.  Create new account from https://benchprep.com/purchases/new
+
+
+Existing User Log in Scenarios
+
+https://benchprep.com/login
+
+NEW
+
+	1.  Library subscription account
+
+	2.  Solo subscription account
+
+LTA
+
+	1.  LTA user account
+
+
+Purchase Scenarios
+
+NEW USER - account from purchases/subscription
+
+	1.  Purchase web only library subscription
+
+	2.  Purchase web + mobile library subscription
+
+	3.  Purchase web only solo subscription
+
+	4.  Purchase web + mobile solo subscription
+
+NEW USER - account from purchases/solo
+
+	1.  Purchase web only library subscription
+
+	2.  Purchase web + mobile library subscription
+
+	3.  Purchase web only solo subscription
+
+	4.  Purchase web + mobile solo subscription
+
+
+	5.  Purchase web only library first, add web only solo second
+
+	6.  Purchase web + mobile library first, add web + mobile solo second
+
+	7.  Purchase web only solo first, add web library second
+
+	8.  Purchase web + mobile solo first, add web + mobile library second 	
+
+
+
+LTA USER
+
+	1.  Purchase LTA course
+
+	2.  Purchase LTA course, add web only library
+
+	3.  Purcahse LTA course, add web + mobile library
+
+	4.  Purchase LTA course, add web only solo
+
+	5.  Purchase LTA course, add web + mobile solo
+
+	6.  Purchase LTA course, add web only library first, add web only solo second
+
+	7.  Purchase LTA course, add web + mobile library first, add web + mobile solo second
+
+	8.  Purchase LTA course, add web only solo first, add web only library second
+
+	9.  Purcahse LTA course, add web + mobile solo first, add web + mobile library second
+

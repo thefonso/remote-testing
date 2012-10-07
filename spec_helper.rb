@@ -4,6 +4,7 @@ require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
 require 'json'
+# require 'webmock/rspec'
 
 require 'capybara/dsl'
 # Capybara configuration
