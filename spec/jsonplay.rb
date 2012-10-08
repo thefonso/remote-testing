@@ -14,13 +14,13 @@ class Jsonplay
 		res = Net::HTTP.post_form(uri, 'email' => 'integration-tester+1@benchprep.com')
 
 		# write this output to a file
-		output = File.open( "../fixtures/sp_wm_persona.json",'w' ){|f| 
+		output = File.open( "spec/fixtures/sp_wm_persona.json",'w' ){|f| 
 			f.flock(File::LOCK_EX)
 			f.write(res.body)
 		}
 
 		# Now parse this string as json
-		json = File.read('../fixtures/sp_wm_persona.json')
+		json = File.read('spec/fixtures/sp_wm_persona.json')
 		@empls = JSON.parse(json)
 
 		return @empls #pretty printed output

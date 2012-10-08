@@ -8,7 +8,7 @@ describe "Create new user " do
     #   # @user = FactoryGirl.build(:user)     
     # end
  
-  	it "should allow user to choose web-plan" do 
+  	xit "should allow user to choose web-plan" do 
       visit "/purchases/subscription" #TODO-create a fake of the model used for this form
       choose('web-plan') 
   	
