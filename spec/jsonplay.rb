@@ -1,22 +1,23 @@
 # require	'open-uri'
 require 'pp' #pretty printed output...wow
 require 'net/http'
+require 'json' # oh this is freaky...without this line json pulls a false error...it's all over the net this week-oct 8th
 
-# THIS WORKS
-# json = open("http://search.twitter.com/search.json?q=%40twitterapi").read
-# json = File.read('sp_wm_persona.json')
+# first grab the data
 
-# THIS DOES NOT WORK
-# json = open("http://staging2.benchprep.com/api/v1/test/fixtures.json?email=integration-tester+1@benchprep.com").read
+uri = URI("http://staging2.benchprep.com/api/v1/test/fixtures.json")
+
+res = Net::HTTP.post_form(uri, 'email' => 'integration-tester+1@benchprep.com')
+
+# write this output to a file
+output = File.open( "fixtures/sp_wm_persona.json",'w' ){|f| 
+	f.flock(File::LOCK_EX)
+	f.write(res.body)
+}
 
 
-# empls = JSON.parse(json)
+# Now parse this string as json
+json = File.read('fixtures/sp_wm_persona.json')
+empls = JSON.parse(json)
 
-# pp empls
-
-
-   uri = URI("http://staging2.benchprep.com/api/v1/test/fixtures.json")
-   
-   res = Net::HTTP.post_form(uri, 'email' => 'integration-tester+1@benchprep.com')
-
-   puts res.body
+pp empls

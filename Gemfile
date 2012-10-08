@@ -4,6 +4,5 @@ gem 'capybara'
 gem 'launchy'
 gem 'ruby-debug19'
 gem 'factory_girl'
-
-# gem 'json' # may be bundled with 1.9.2 
+gem 'json' # may be bundled with 1.9.2 
 # gem 'webmock' #fake http requests this is not what I need
