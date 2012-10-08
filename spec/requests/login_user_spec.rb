@@ -9,8 +9,8 @@
     # end
     before :all do
       jplay = Jsonplay.new
-      @email = jplay.empls['email']
-      @password = jplay.empls['authentication_token']
+      @email = jplay.default['email']
+      @password = jplay.default['authentication_token'] #FIXME not sure about this 
     end
 
   	xit "should allow user to select login from top nav" do 
@@ -28,10 +28,10 @@
         		fill_in 'user-password', :with => @password
       	end
 
-  	    #FIXME - the design crew will make this go away    	
-      	# within("#login-form") do 
+  	   # FIXME - the design crew will make this go away    	
+       # within("#login-form") do 
        # 	 	click_link '#login-link' #this gives false failing test...geek query...why?
-       # 	end
-      	# page.should have_content('Manage courses')
+       # end
+       # page.should have_content('Manage courses')
     	end
   end 
