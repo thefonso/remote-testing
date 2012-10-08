@@ -4,20 +4,26 @@ require 'net/http'
 require 'json' # oh this is freaky...without this line json pulls a false error...it's all over the net this week-oct 8th
 
 # first grab the data
+class jsonplay
 
-uri = URI("http://staging2.benchprep.com/api/v1/test/fixtures.json")
+	attr_reader :empls
 
-res = Net::HTTP.post_form(uri, 'email' => 'integration-tester+1@benchprep.com')
+	def initialize
+		uri = URI("http://staging.benchprep.com/api/v1/test/fixtures.json")
 
-# write this output to a file
-output = File.open( "fixtures/sp_wm_persona.json",'w' ){|f| 
-	f.flock(File::LOCK_EX)
-	f.write(res.body)
-}
+		res = Net::HTTP.post_form(uri, 'email' => 'integration-tester+1@benchprep.com')
+
+		# write this output to a file
+		output = File.open( "fixtures/sp_wm_persona.json",'w' ){|f| 
+			f.flock(File::LOCK_EX)
+			f.write(res.body)
+		}
 
 
-# Now parse this string as json
-json = File.read('fixtures/sp_wm_persona.json')
-empls = JSON.parse(json)
+		# Now parse this string as json
+		json = File.read('fixtures/sp_wm_persona.json')
+		empls = JSON.parse(json)
 
-pp empls
+		return @empls #pretty printed output
+	end
+end

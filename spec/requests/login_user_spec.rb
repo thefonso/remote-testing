@@ -1,13 +1,17 @@
   require_relative '../../spec_helper'
   require_relative '../../lib/user'
+  require_relative '../jasonplay'
 
   describe "Existing User Log in Scenario", :type => :request do
     
+    # before :all do
+    #   @user = FactoryGirl.build(:stuff)
+    # end
     before :all do
-      @user = FactoryGirl.build(:stuff)
+      jasonplay.grabdata
     end
 
-  	it "should allow user to select login from top nav" do 
+  	xit "should allow user to select login from top nav" do 
   		visit "/" 
       	within("#main-header")do
       		click_link 'Log In'	
