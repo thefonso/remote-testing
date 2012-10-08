@@ -1,6 +1,6 @@
   require_relative '../../spec_helper'
   require_relative '../../lib/user'
-  require_relative '../jsonplay'
+  require_relative '../support/jsonplay'
 
   describe "Existing User Log in Scenario", :type => :request do
     
