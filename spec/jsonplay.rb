@@ -4,7 +4,7 @@ require 'net/http'
 require 'json' # oh this is freaky...without this line json pulls a false error...it's all over the net this week-oct 8th
 
 # first grab the data
-class jsonplay
+class Jsonplay
 
 	attr_reader :empls
 
@@ -19,10 +19,9 @@ class jsonplay
 			f.write(res.body)
 		}
 
-
 		# Now parse this string as json
 		json = File.read('fixtures/sp_wm_persona.json')
-		empls = JSON.parse(json)
+		@empls = JSON.parse(json)
 
 		return @empls #pretty printed output
 	end
