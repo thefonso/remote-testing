@@ -19,11 +19,15 @@ describe "https://benchprep.com/courses page" do
 					# page.should have_link("Learn more")
 
 					item.click
-					# within(:xpath, ".//li")do
+					within('li.course.course-list-item')do
+						find_link('Learn more').click
+
+						page.should_not have_content('500 internal')
 						
-					# end
+					end
+
 				}
-				# page.should_not have_content('500 internal')
+				
 			end
 		end
 	
