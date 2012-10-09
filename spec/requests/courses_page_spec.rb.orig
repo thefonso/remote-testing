@@ -2,6 +2,33 @@ require_relative '../../spec_helper'
 
 describe "https://benchprep.com/courses page" do
 
+<<<<<<< HEAD
+		page.should have_content("Browse BenchPrep Courses")
+	end
+	# TODO loop over each li within ul#course-list
+	# iterate each li item in ul#course-list
+
+		it 'should be able to visit each Course' do
+			visit('/courses')
+			# find h3 course title with course name
+			within('ul#course-list.course-list') do
+				all('li.course.course-list-item').each { |item|
+					title = ('h3#{value}')
+					# page.should have_link("Learn more")
+
+					item.click
+
+					within('li.course.course-list-item')do
+						find_link('Learn more').click
+					end
+					page.should have_content(title)
+				}
+				
+			end
+		end
+	
+end
+=======
 	tests = [] #init array
 	it 'should be able to visit each Course' do
 
@@ -31,3 +58,4 @@ describe "https://benchprep.com/courses page" do
 	end
 end
 
+>>>>>>> courses
