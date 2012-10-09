@@ -28,7 +28,7 @@ class Jsonplay
 		return empls #pretty printed output
 	end
 
-	# subscriber persona for a user with web and mobile devices
+	# a 	subscriber persona for a user with web and mobile devices
 	def suscriber_wm
 		uri = URI("http://staging.benchprep.com/api/v1/test/fixtures.json")	
 
