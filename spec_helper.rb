@@ -9,7 +9,7 @@ require 'json'
 require 'capybara/dsl'
 # Capybara configuration
 Capybara.default_driver = :selenium
-Capybara.app_host = "http://www.benchprep.com"
+Capybara.app_host = "https://staging.benchprep.com"
 
 require 'factory_girl'
 # give me ma stuff

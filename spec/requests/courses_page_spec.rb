@@ -2,32 +2,31 @@ require_relative '../../spec_helper'
 
 describe "https://benchprep.com/courses page" do
 
-	tests = [] #init array
+	
 	it 'should be able to visit each Course' do
-
+		course_link_tests = []
+		
 		visit('/courses')
-		# find h3 course title with course name
-		within('ul#course-list.course-list')do
-			all('li').each { |item|
-			
-			# Pass one
-			title = 'h3#{value}'
-			id = item["data-content-package-id"]
-			# tests = << {title: title, id: id}
-
-			within(:xpath, "//li[@data-content-package-id='"+id+"']")do
-				find('h3.course-title').click
-
-				page.should have_link("Learn more")
-
-				within(:xpath, "//li[@data-content-package-id='"+id+"']")do
-					click_on('Learn more')
-				end
-			end
-			}
-
-			find('h1.padded-heading').should have_content(title)
+		('ul#course-list.course-list').all('li.course-list-item').each do |item|
+			title = item.find('h3.course-title').text
+			link_url = item.find("a.learn-more")["href"]
+			course_link_tests << {title: title, url: link_url}
 		end
+
+		broken_pages = []
+		course_link_tests.each do |course_link_test|
+			visit(course_link_test[:url])
+			if page.find('h1.padded-heading').text == course_link_test[:title]
+				broken_pages << course_link_test
+			end
+		end
+
+		if broken_pages.any?
+			assert false, broken_pages.join("\n")
+		else
+			assert true
+		end
+
 	end
 end
 
