@@ -9,23 +9,20 @@ describe "https://benchprep.com/courses page" do
 	# TODO loop over each li within ul#course-list
 	# iterate each li item in ul#course-list
 
-	
 		it 'should be able to visit each Course' do
 			visit('/courses')
 			# find h3 course title with course name
 			within('ul#course-list.course-list') do
 				all('li.course.course-list-item').each { |item|
-					# find('h3.course-title').click
+					title = ('h3#{value}')
 					# page.should have_link("Learn more")
 
 					item.click
+
 					within('li.course.course-list-item')do
 						find_link('Learn more').click
-
-						page.should_not have_content('500 internal')
-						
 					end
-
+					page.should have_content(title)
 				}
 				
 			end
